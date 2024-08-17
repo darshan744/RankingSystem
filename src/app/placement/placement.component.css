@@ -1,0 +1,16 @@
+.mainDiv{
+    display: flex;
+    gap: 30px;
+    
+}
+.firstDiv,.secondDiv,.thirdDiv,.fourthDiv{
+    background-color: #ffff;
+    width: 300px;
+    border-radius: 30px;
+    box-shadow: 8px 8px 8px 8px lightblue;
+    text-align: center;
+}
+h4{
+    margin-top: 30px;
+
+}
