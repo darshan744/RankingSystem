@@ -20,7 +20,7 @@ import { ElementRef } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
-  userdetails:any
+  userdetails:any = {};
   constructor( private router:Router){}
   ngOnInit():void{
     const details = sessionStorage.getItem('loggedInUser')
@@ -29,6 +29,7 @@ export class SidenavComponent implements OnInit {
     }
   }
   ngAfterViewInit(){
+    
     const img = document.getElementById("me");
     const items = document.getElementById('items')!;
     img?.addEventListener('click',function(){
@@ -50,7 +51,14 @@ export class SidenavComponent implements OnInit {
   }
   signout(){
     sessionStorage.removeItem('User');
-   this.router.navigate(['/']).then(()=>window.location.reload())
+    this.router.navigate(['/']).then(()=>window.location.reload())
+  }
+  imgerror(){
+    console.log('Image ERror')
+    if(this.userdetails.picture){
+      const img = document.getElementById("me") as HTMLImageElement;
+      img.src = this.userdetails.picture
+    }
   }
   list = [
     {

@@ -8,7 +8,7 @@
         <span style="cursor: default;">Ranking System</span>
     </div>
     <div class="dropdown" style="position: relative;">
-        <img [src]="userdetails.picture" alt="" class="profile" id="me">
+        <img src="me1.jpg" alt="" class="profile" id="me" (error)="imgerror()" >
         <div class="items" id="items" style="z-index: 200;">
          <button [routerLink] = "['/dashboard']"id="Dashboard">Dashboard</button>
          <button id="Logout" (click)="signout()">Logout</button> 
